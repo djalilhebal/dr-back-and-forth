@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: purple;
+}
+
+a {
+    color: inherit;
+}
+
+/*
+@property --turn {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --nagito-z {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --hajime-z {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0;
+}
+*/
+
+#scene {
+    width: 1280px;
+    height: 720px;
+    margin: 0 auto;
+}
+
+#scene {
+    --char-h: 500px;
+    --rect-center:
+        "M 8.578125 0 C 3.8253899 0 0 3.8253899 0 8.578125 L 0 711.42188 C 0 716.17461 3.8253899 720 8.578125 720 L 1271.4219 720 C 1276.1746 720 1280 716.17461 1280 711.42188 L 1280 8.578125 C 1280 3.8253899 1276.1746 0 1271.4219 0 L 956.21484 0 C 958.31229 0 960 1.6877054 960 3.7851562 L 960 636.21484 C 960 638.31229 958.31229 640 956.21484 640 L 323.78516 640 C 321.68771 640 320 638.31229 320 636.21484 L 320 3.7851562 C 320 1.6877054 321.68771 0 323.78516 0 L 8.578125 0 z ";
+    overflow: hidden;
+
+    --progress: 100;
+    --view: 100px;
+    /*calc(var(
+    --progress) * 1px); */
+    animation: BackAndForth 2000ms linear alternate infinite;
+
+    /* 0 or 1 */
+    --turn: 0;
+    --nagito-z: 0px;
+    --hajime-z: 45px;
+}
+
+
+#scene * {
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+}
+
+#world {
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#background {
+    transform: perspective(var(--view)) translateZ(var(--hajime-z));
+}
+
+#nagito {
+    height: var(--char-h);
+    top: 210px;
+    left: 130px;
+    transform: perspective(var(--view)) translateZ(var(--nagito-z));
+}
+
+#hajime {
+    height: var(--char-h);
+    top: 210px;
+    left: 570px;
+    transform: perspective(var(--view)) translateZ(var(--hajime-z));
+}
+
+#camera {
+    width: 100%;
+    height: 100%;
+}
+
+#camera::after {
+    content: '';
+    display: block;
+    width: 1280px;
+    height: 720px;
+    --overlay-color: #b22222c9;
+    background: linear-gradient(45deg, var(--overlay-color), var(--overlay-color)), url(./assets/hexagon-pattern.jpg);
+    background-size: 220px;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    clip-path: path(var(--rect-center));
+    backdrop-filter: blur(3px);
+}
+
+#characters {
+    transform: translateX(calc(var(--turn) * 300px));
+}
+
+#speaker {
+    background: linear-gradient(45deg, firebrick 50%, transparent 70%);
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    font-style: italic;
+}
+
+#ui {
+    width: 100%;
+    height: 100px;
+    top: 600px;
+}
+
+#ui>* {
+    position: relative;
+}
+
+#textbox {
+    width: 100%;
+    height: 100%;
+    background: #000000de;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+}
+
+
+@keyframes BackAndForth {
+    from {
+        --turn: 0;
+        --nagito-z: 0px;
+        --hajime-z: 40px;
+    }
+
+    to {
+        --turn: 1;
+        --nagito-z: 40px;
+        --hajime-z: 10px;
+    }
+}
