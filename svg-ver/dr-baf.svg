@@ -1,0 +1,73 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg" id="scene" width="1280" height="720" viewBox="0 0 1280 720" version="1.1" xml:space="preserve">
+    <style>
+    #background {
+        filter: blur(2px);
+    }
+    
+    use[href="#camera"] {
+        x: 320;
+    }
+    
+    #hexagons rect {
+        fill: #771577;
+    }
+
+    #hexagons path {
+        stroke: #480048;
+    }
+
+    stop {
+        stop-color: deeppink;
+    }
+    </style>
+    <defs>
+        <pattern id="hexagons" patternUnits="userSpaceOnUse" width="29" height="50.115" patternTransform="scale(0.7) rotate(45)">
+            <rect x="0" y="0" width="100%" height="100%"/>
+            <path d="M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z" stroke-width="2" fill="none"/>
+        </pattern>
+
+        <linearGradient id="linearGradient4">
+            <stop style="stop-opacity:1;" offset="0"/>
+            <stop style="stop-opacity:1;" offset="0.2"/>
+            <stop style="stop-opacity:0;" offset="0.5"/>
+        </linearGradient>
+        <linearGradient id="linearGradient5" xlink:href="#linearGradient4" x1="0" y1="581.68549" x2="1280" y2="581.68549" gradientUnits="userSpaceOnUse"/>
+    </defs>
+
+    <g id="world">
+        <image width="1286.4706" height="729" preserveAspectRatio="none" xlink:href="./assets/dr-background-restaurant.jpg" id="background" x="0" y="0"/>
+        <image width="177.47887" height="475.79443" preserveAspectRatio="none" xlink:href="./assets/Mikan_Tsumiki_Fullbody_Sprite_(5).png" id="image1-0" x="623.90002" y="183.07761"/>
+        <image width="249.01161" height="503.0257" preserveAspectRatio="none" xlink:href="./assets/Ibuki_Mioda_Fullbody_Sprite_(11).png" id="image1-7" x="968.86908" y="163.33604"/>
+        <image width="219.9438" height="509.07709" preserveAspectRatio="none" xlink:href="./assets/Sonia_Nevermind_Fullbody_Sprite_(18).png" id="image1-3" x="22.442047" y="177.10991"/>
+        <image width="185.77728" height="500" preserveAspectRatio="none" xlink:href="./assets/Kazuichi_Soda_Fullbody_Sprite_(24).png" id="image1-02" x="233.41348" y="177.35793"/>
+        <image width="216.80524" height="518.15417" preserveAspectRatio="none" xlink:href="./assets/dr-sprite-hajime-accusing.png" id="image1-31" x="781.84027" y="147.40831"/>
+        <image width="245.39877" height="500" preserveAspectRatio="none" xlink:href="./assets/dr-sprite-nagito-accusing.png" id="image1-2" x="414.05493" y="160"/>
+    </g>
+
+    <g id="ui">
+
+        <rect id="overlay" style="fill: url(#hexagons);fill-opacity: 0.7;" width="1280" height="720" x="0" y="0"/>
+
+        <symbol id="camera" viewBox="350 170 320 360">
+            <use x="0" y="0" href="#world"/>
+
+            <!-- Nagito to Hajime and back to Nagito -->
+            <animate id="toHajime" attributeName="viewBox" values="400 170 300 250; 750 170 300 250" dur="1s" begin="0s;toNagito.end + 1s" fill="freeze" calcMode="spline" keySplines="            0.86 0 0.07 1;" keyTimes="0;1"/>
+            <animate id="toNagito" attributeName="viewBox" values="750 170 300 250; 400 170 300 250" begin="toHajime.end + 1s"  fill="freeze" dur="1s" calcMode="spline" keySplines="0.86 0 0.07 1;" keyTimes="   0; 1"/>
+        </symbol>
+        <use href="#camera" width="640" height="720"/>
+
+
+        <rect id="speaker-box" style="fill:url(#linearGradient5);stroke-width:7.04282;stroke-linecap:round;stroke-linejoin:round" width="1280" height="40" x="0" y="561.68549" ry="0.42553189"/>
+        <rect id="dialog-box" style="fill:#000000;stroke-width:8.3799;stroke-linecap:round;stroke-linejoin:round;" width="1280" height="120" x="0" y="600.08301" ry="0.56603795"/>
+        <text id="speaker-text" style="font-size:40px;font-style: italic;fill:#ffffff;" x="10" y="595">
+            ???
+        </text>
+        <text id="dialog-text" style="font-size: 40px;fill:#ffffff;" x="10" y="650">
+          No, that's wrong!
+        </text>
+    </g>
+
+</svg>
