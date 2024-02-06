@@ -5,6 +5,9 @@ This was an attempt at recreating Danganronpa transition effects.
 
 Danganronpa games are known for their 2.5D style, I liked their transition effect, so I tried to recreate it using SVG and CSS.
 
+> ![Demo](./dr-back-and-forth-demo--2024-02-03.gif)  
+> Camera panning (SVG ver.)
+
 ---
 
 This animation is inspired by Danganronpa in general and Danganronpa F specifically.  
