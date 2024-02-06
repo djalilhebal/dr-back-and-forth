@@ -12,9 +12,20 @@ Notice how the camera switches (_back and forth_) between the black-haired girl 
 - Example 1: Camera switching between Cancel and Moraiteru (timestamp 23:18):
 [Danganronpa F: Shattered Hope - Prologue (Full)](https://youtu.be/EGU4w5C_WKI?list=PLw3Hoj70YKZBdEBcpDKu8GiXG_WBVysrp&t=1398)
 
-One of Danganronpa F creators made a video tutorial about it.
+One of Danganronpa F's creators made a video tutorial about it.
 They use After Effects, but their techniques can be employed in other contexts, like Web technologies.
 - Tutorial 1: [Panning and Camera - Fanganronpa Tutorial (AE)](https://www.youtube.com/watch?v=iOlk6GDzS8M)
+
+
+## Attempts / Versions
+
+- [x] HTML + CSS
+
+- [x] SVG
+
+- [ ] Three.js
+
+- [ ] Other (Shotcut? Blender? Ren'Py?)
 
 
 ## Notes
